@@ -10,8 +10,18 @@ import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class EmployeeController{
-        @Autowired
         private EmployeeService employeeService;
+
+//        @Autowired(required=true)
+//        //@Qualifier(value= "employeeService")
+//        public void setEmployeeService(EmployeeService employeeService){
+//                this.employeeService = employeeService;
+//        }
+
+
+        public EmployeeController(EmployeeService employeeService) {
+                this.employeeService = employeeService;
+        }
 
         //@RequestMapping(value = "/persons", method = RequestMethod.GET)
         @GetMapping(value = "/employees")
