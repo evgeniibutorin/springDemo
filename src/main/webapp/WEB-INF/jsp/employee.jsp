@@ -1,7 +1,7 @@
 
-<%@ taglib uri="https://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ taglib uri="https://www.springframework.org/tags" prefix="spring" %>
-<%@ taglib uri="https://www.springframework.org/tags/form" prefix="form" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <%@ page session="false" %>
 <html>
 <head>
@@ -47,12 +47,12 @@
         </tr>
         <tr>
             <td>
-                <form:label path="country">
-                    <spring:message text="Country"/>
+                <form:label path="position">
+                    <spring:message text="Position"/>
                 </form:label>
             </td>
             <td>
-                <form:input path="country" />
+                <form:input path="position" />
             </td>
         </tr>
         <tr>

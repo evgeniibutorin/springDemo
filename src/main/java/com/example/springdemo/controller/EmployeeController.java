@@ -13,7 +13,7 @@ public class EmployeeController{
         private EmployeeService employeeService;
 
         @Autowired(required=true)
-        @Qualifier(value= "employeeService")
+        //@Qualifier(value= "employeeService")
         public void setEmployeeService(EmployeeService employeeService){
                 this.employeeService = employeeService;
         }
