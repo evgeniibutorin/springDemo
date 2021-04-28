@@ -12,14 +12,19 @@ import org.springframework.web.bind.annotation.*;
 public class EmployeeController{
         private EmployeeService employeeService;
 
-        @Autowired(required=true)
-        //@Qualifier(value= "employeeService")
-        public void setEmployeeService(EmployeeService employeeService){
+//        @Autowired(required=true)
+//        //@Qualifier(value= "employeeService")
+//        public void setEmployeeService(EmployeeService employeeService){
+//                this.employeeService = employeeService;
+//        }
+
+
+        public EmployeeController(EmployeeService employeeService) {
                 this.employeeService = employeeService;
         }
 
         //@RequestMapping(value = "/persons", method = RequestMethod.GET)
-        @GetMapping(value = "/employee")
+        @GetMapping(value = "/employees")
         public String listEmployees(Model model) {
                 model.addAttribute("employee", new Employee());
                 model.addAttribute("listEmployees", this.employeeService.listEmployees());
