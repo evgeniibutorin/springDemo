@@ -1,6 +1,7 @@
 package com.example.springdemo.service;
 
 import com.example.springdemo.dao.EmployeeDAO;
+import com.example.springdemo.dao.EmployeeDAOImpl;
 import com.example.springdemo.model.Employee;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -11,6 +12,12 @@ import java.util.List;
 public class EmployeeServiceImpl implements EmployeeService {
 
     private EmployeeDAO employeeDAO;
+    private EmployeeDAOImpl employeeDAOImpl;
+
+    public EmployeeServiceImpl(EmployeeDAO employeeDAO, EmployeeDAOImpl employeeDAOImpl) {
+        this.employeeDAO = employeeDAO;
+        this.employeeDAOImpl = employeeDAOImpl;
+    }
 
     public void setEmployeeDAO(EmployeeDAO employeeDAO){
         this.employeeDAO = employeeDAO;
