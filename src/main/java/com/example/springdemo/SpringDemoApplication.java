@@ -11,10 +11,10 @@ import org.springframework.boot.web.servlet.support.SpringBootServletInitializer
 @SpringBootApplication(exclude= HibernateJpaAutoConfiguration.class)
 public class SpringDemoApplication extends SpringBootServletInitializer {
 
-    @Override
-    protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
-        return application.sources(SpringDemoApplication.class);
-    }
+//    @Override
+//    protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
+//        return application.sources(SpringDemoApplication.class);
+//    }
 
     public static void main(String[] args) {
         SpringApplication.run(SpringDemoApplication.class, args);

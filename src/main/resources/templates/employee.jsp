@@ -31,7 +31,7 @@
                 </td>
                 <td>
                     <form:input path="id" readonly="true" size="8"  disabled="true" />
-                    <form:hidden path="id" />
+                        <%--                    <form:hidden path="id" />--%>
                 </td>
             </tr>
         </c:if>
