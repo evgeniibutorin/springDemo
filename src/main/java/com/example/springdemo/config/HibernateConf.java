@@ -7,19 +7,16 @@ import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
-import org.springframework.web.servlet.ViewResolver;
-import org.springframework.web.servlet.config.annotation.DefaultServletHandlerConfigurer;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
-import org.springframework.web.servlet.view.InternalResourceViewResolver;
-import org.springframework.web.servlet.view.JstlView;
 
 import javax.sql.DataSource;
 import java.util.Properties;
 
 @Configuration
 @EnableWebMvc
-//@EnableTransactionManagement
+//эта аннотация разрешает нашему проекту использовать MVC эквивалентен <mvc:annotation-driven /> в XML. Он позволяет поддерживать @Controller -аннотированные классы, которые используют @RequestMapping для сопоставления входящих запросов с определенным методом.
+@EnableTransactionManagement
 public class HibernateConf implements WebMvcConfigurer {
 
     @Bean
@@ -48,12 +45,11 @@ public class HibernateConf implements WebMvcConfigurer {
 //    }
 
 
-
     @Bean
     public DataSource dataSource() {
         BasicDataSource dataSource = new BasicDataSource();
         dataSource.setDriverClassName("org.postgresql.Driver");
-        dataSource.setUrl("jdbc:postgresql://localhost:5432/springempl");
+        dataSource.setUrl("jdbc:postgresql://localhost:5432/students");
         dataSource.setUsername("postgres");
         dataSource.setPassword("32167");
 
