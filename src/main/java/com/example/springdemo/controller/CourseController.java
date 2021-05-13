@@ -17,9 +17,8 @@ public class CourseController {
     public CourseController(CourseService courseService) {
         this.courseService = courseService;
     }
-
-///WEB-INF/view
-    @GetMapping(value = "/course")
+        ///WEB-INF/view
+    @GetMapping("course")
     public String getCourses(ModelMap courseModel){
 //        List<Course> list = courseService.findAllCourses();
 //        for (Course c:list){
